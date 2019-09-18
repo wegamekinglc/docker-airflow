@@ -6,10 +6,10 @@ TRY_LOOP="20"
 : "${REDIS_PORT:="6379"}"
 : "${REDIS_PASSWORD:=""}"
 
-: "${POSTGRES_HOST:="pgm-bp199af1e28ooii114870.pg.rds.aliyuncs.com"}"
-: "${POSTGRES_PORT:="3433"}"
-: "${POSTGRES_USER:="sunmiai"}"
-: "${POSTGRES_PASSWORD:="7jetVZJ0cZ7B25ei"}"
+: "${POSTGRES_HOST:="172.16.0.171"}"
+: "${POSTGRES_PORT:="30972"}"
+: "${POSTGRES_USER:="admin"}"
+: "${POSTGRES_PASSWORD:="admin123"}"
 : "${POSTGRES_DB:="airflow"}"
 
 # Defaults and back-compat
