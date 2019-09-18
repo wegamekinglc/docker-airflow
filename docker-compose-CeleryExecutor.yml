@@ -4,22 +4,10 @@ services:
         image: 'redis:5.0.5'
         # command: redis-server --requirepass redispass
 
-    postgres:
-        image: postgres:9.6
-        environment:
-            - POSTGRES_USER=airflow
-            - POSTGRES_PASSWORD=airflow
-            - POSTGRES_DB=airflow
-        # Uncomment these lines to persist data on the local filesystem.
-        #     - PGDATA=/var/lib/postgresql/data/pgdata
-        # volumes:
-        #     - ./pgdata:/var/lib/postgresql/data/pgdata
-
     webserver:
         image: puckel/docker-airflow:1.10.4
         restart: always
         depends_on:
-            - postgres
             - redis
         environment:
             - LOAD_EX=n
