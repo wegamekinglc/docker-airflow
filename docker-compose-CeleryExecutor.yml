@@ -5,7 +5,7 @@ services:
         # command: redis-server --requirepass redispass
 
     webserver:
-        image: puckel/docker-airflow:latest
+        image: puckel/docker-airflow:1.10.6
         restart: always
         depends_on:
             - redis
@@ -31,7 +31,7 @@ services:
             retries: 3
 
     flower:
-        image: puckel/docker-airflow:latest
+        image: puckel/docker-airflow:1.10.6
         restart: always
         depends_on:
             - redis
@@ -43,7 +43,7 @@ services:
         command: flower
 
     scheduler:
-        image: puckel/docker-airflow:latest
+        image: puckel/docker-airflow:1.10.6
         restart: always
         depends_on:
             - webserver
@@ -62,7 +62,7 @@ services:
         command: scheduler
 
     worker:
-        image: puckel/docker-airflow:latest
+        image: puckel/docker-airflow:1.10.6
         restart: always
         depends_on:
             - scheduler
